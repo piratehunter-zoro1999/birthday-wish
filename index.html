@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#170d14" />
+  <title>For You ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="ambient" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <button class="logo" id="logoSecret" aria-label="Secret heart">♥</button>
+    <div class="progress"><span id="progressBar"></span></div>
+    <button class="music-toggle" id="musicToggle" aria-label="Play music">♪ <span>Sound</span></button>
+  </header>
+
+  <main>
+    <section class="screen hero active" id="entrance">
+      <div class="hero-orbit"></div>
+      <div class="eyebrow reveal">A tiny experience, made just for you</div>
+      <h1 class="hero-title reveal delay-1">Hey, <em>muskan.</em> <span>♥</span></h1>
+      <p class="hero-copy reveal delay-2">I made something for you...</p>
+      <button class="primary-btn magnetic reveal delay-3" id="enterBtn">Enter <span>✦</span></button>
+      <p class="sound-note reveal delay-4">Best experienced with sound 🎧</p>
+    </section>
+
+    <section class="screen message" id="message">
+      <div class="section-inner narrow">
+        <span class="section-number">01 / A LITTLE NOTE</span>
+        <div class="message-card glass reveal">
+          <div class="card-glow"></div>
+          <p class="typewriter" id="typewriter"></p>
+          <p class="message-follow" id="messageFollow">But today isn't an ordinary day...</p>
+          <button class="text-btn" id="whyBtn">Why? <span>→</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen birthday" id="birthday">
+      <div class="confetti-layer" id="confetti"></div>
+      <div class="section-inner center">
+        <span class="section-number">02 / YOUR DAY</span>
+        <div class="cake" aria-hidden="true"><span>✦</span><span>♥</span><span>✦</span></div>
+        <h2 class="display-title">Because it's<br><em>your day.</em></h2>
+        <p class="birthday-name" id="birthdayName"></p>
+        <p class="subtle">Today deserves a little more magic.</p>
+        <button class="primary-btn" id="storyBtn">I have something to tell you <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="screen story" id="story">
+      <div class="section-inner">
+        <span class="section-number">03 / OUR STORY</span>
+        <h2 class="section-title">A little story<br><em>called us.</em></h2>
+        <div class="timeline">
+          <article class="timeline-item reveal"><span class="timeline-dot"></span><div><small>The Beginning</small><h3>That's where everything started...</h3><p id="beginningText"></p></div></article>
+          <article class="timeline-item reveal"><span class="timeline-dot"></span><div><small>The First Memory</small><h3>One of those moments I'll probably never forget.</h3><p id="firstMemoryText"></p></div></article>
+          <article class="timeline-item reveal"><span class="timeline-dot"></span><div><small>The Random Conversations</small><h3>Somehow the random conversations became my favorite ones.</h3><p>And somehow, “nothing” turned into hours.</p></div></article>
+          <article class="timeline-item reveal"><span class="timeline-dot"></span><div><small>The Inside Jokes</small><h3>Nobody else understands. And that's exactly why they're ours.</h3><p id="jokeText"></p></div></article>
+          <article class="timeline-item reveal"><span class="timeline-dot"></span><div><small>Today</small><h3>And somehow, we're here.</h3><p>Still making memories. Still choosing each other.</p></div></article>
+        </div>
+        <button class="primary-btn next-btn" data-next="gallery">Show me the memories <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="screen gallery" id="gallery">
+      <div class="section-inner">
+        <span class="section-number">04 / THE MEMORIES</span>
+        <h2 class="section-title">Little moments.<br><em>Big feelings.</em></h2>
+        <div class="photo-grid" id="photoGrid"></div>
+        <p class="placeholder-note">Replace the six files in <code>assets/</code> with your photos.</p>
+        <button class="primary-btn next-btn" data-next="quiz">Okay, one little game <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="screen quiz" id="quiz">
+      <div class="section-inner narrow">
+        <span class="section-number">05 / BE HONEST 👀</span>
+        <h2 class="section-title">How well do<br><em>you know us?</em></h2>
+        <div class="quiz-card glass" id="quizCard">
+          <div class="quiz-progress"><span id="quizProgress"></span></div>
+          <p class="quiz-count" id="quizCount"></p>
+          <h3 id="quizQuestion"></h3>
+          <div class="quiz-options" id="quizOptions"></div>
+          <p class="quiz-feedback" id="quizFeedback"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen runaway" id="runaway">
+      <div class="section-inner center">
+        <span class="section-number">06 / ONE QUESTION</span>
+        <h2 class="display-title">Will you<br><em>press this?</em></h2>
+        <p id="runawayMessage">Be honest. 😌</p>
+        <div class="runaway-stage" id="runawayStage">
+          <button class="secondary-btn yes-btn" id="yesBtn">YES ♥</button>
+          <button class="secondary-btn no-btn" id="noBtn">NO ❤️</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen gift" id="gift">
+      <div class="section-inner center">
+        <span class="section-number">07 / ONE MORE THING</span>
+        <h2 class="section-title">There's still<br><em>one more thing...</em></h2>
+        <button class="gift-box" id="giftBox" aria-label="Open gift">
+          <span class="lid"></span><span class="box-body"></span><span class="ribbon-v"></span><span class="ribbon-h"></span>
+        </button>
+        <div class="gift-message" id="giftMessage">
+          <p>If I could give you one thing today,</p>
+          <h3>I'd give you the ability to see yourself the way I see you.</h3>
+          <p>Because you're pretty damn special. <span>♥</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen reasons" id="reasons">
+      <div class="section-inner">
+        <span class="section-number">08 / A FEW THINGS</span>
+        <h2 class="section-title">A few things<br><em>I love about you...</em></h2>
+        <div class="reasons-grid" id="reasonsGrid"></div>
+        <button class="primary-btn next-btn" data-next="final">One last thing <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="screen final" id="final">
+      <div class="fireworks" id="fireworks"></div>
+      <div class="section-inner center">
+        <span class="section-number">09 / FOR YOU</span>
+        <p class="final-line">And that's it...</p>
+        <p class="final-line delayed">Except it isn't.</p>
+        <h2 class="final-title">Because this isn't<br>just a website.</h2>
+        <p class="final-heartline">It's a tiny piece of my heart,<br>made for you.</p>
+        <h1 class="final-name" id="finalName"></h1>
+        <p class="final-wish">I hope this year gives you everything you deserve.</p>
+        <p class="signature">Love, <span id="yourName"></span> ♥</p>
+        <button class="restart" id="restartBtn">Replay the little story ↻</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose">×</button>
+    <img id="lightboxImg" alt="Memory" />
+    <p id="lightboxCaption"></p>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <audio id="bgMusic" loop preload="metadata">
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
